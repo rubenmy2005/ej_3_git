@@ -10,6 +10,9 @@ class Vuelo:
         self.llegada = llegada
         self.precio = precio
 
+    def __str__(self):
+        return(f"El numero de vuelo es {self.numero_vuelo}, con un origen en {self.origen} y destino {self.destino}, con fecha {self.fecha} y hora de salida {self.salida} y hora de llegada de {self.llegada}, con un precio de {self.precio}")
+
 class Pasajero:
     def __init__(self, nombre, apellido, edad, telefono, correo):
         self.nombre = nombre
