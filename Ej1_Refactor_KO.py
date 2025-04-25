@@ -64,13 +64,13 @@ def main():
         mostrar_vuelos_disponibles(vuelos)
     elif opcion == '2':
         #extraer método
-        n = input("Ingrese su nombre: ")
-        a = input("Ingrese su apellido: ")
-        e = int(input("Ingrese su edad: "))
-        t = input("Ingrese su número de teléfono: ")
-        c = input("Ingrese su correo electrónico: ")
+        nombre_pasajero= input("Ingrese su nombre: ")
+        apellido_pasajero= input("Ingrese su apellido: ")
+        eedad_pasajero= int(input("Ingrese su edad: "))
+        telefono_pasajero = input("Ingrese su número de teléfono: ")
+        correo_pasajero = input("Ingrese su correo electrónico: ")
 
-        pasajero = Pasajero(n, a, e, t, c)
+        pasajero = Pasajero(nombre_pasajero, apellido_pasajero, eedad_pasajero, telefono_pasajero, correo_pasajero)
 
         #extraer método
         numero = input("Ingrese el número de vuelo que desea reservar: ")
