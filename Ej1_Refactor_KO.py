@@ -50,35 +50,39 @@ def reservar_vuelo(lista, numero_vuelo, pasajero, cantidad):
     print("No se encontró ningún vuelo con el número especificado.")
 
 
-def main():
-    vuelos = [
+
+
+def menu():
+    while True:
+        vuelos = [
         Vuelo("AA123", "Nueva York", "Los Angeles", "2024-05-15", "08:00", "11:00", 250.00),
         Vuelo("AA456", "Los Angeles", "Chicago", "2024-05-20", "10:00", "13:00", 200.00),
         Vuelo("AA789", "Chicago", "Miami", "2024-05-25", "12:00", "15:00", 300.00)
-    ]
+        ]
 
-    print("Bienvenido al sistema de venta de billetes de avión.")
-    opcion = input("Seleccione una opción:\n1. Ver vuelos disponibles\n2. Reservar vuelo\nIngrese su opción: ")
-
-    if opcion == '1':
-        mostrar_vuelos_disponibles(vuelos)
-    elif opcion == '2':
+        print("Bienvenido al sistema de venta de billetes de avión.")
+        opcion = input("Seleccione una opción:\n1. Ver vuelos disponibles\n2. Reservar vuelo\n3. Salir del menu\nIngrese su opción: ")
+        if opcion == '1':
+            mostrar_vuelos_disponibles(vuelos)
+        elif opcion == '2':
         #extraer método
-        nombre_pasajero= input("Ingrese su nombre: ")
-        apellido_pasajero= input("Ingrese su apellido: ")
-        eedad_pasajero= int(input("Ingrese su edad: "))
-        telefono_pasajero = input("Ingrese su número de teléfono: ")
-        correo_pasajero = input("Ingrese su correo electrónico: ")
+            nombre_pasajero= input("Ingrese su nombre: ")
+            apellido_pasajero= input("Ingrese su apellido: ")
+            edad_pasajero= int(input("Ingrese su edad: "))
+            telefono_pasajero = input("Ingrese su número de teléfono: ")
+            correo_pasajero = input("Ingrese su correo electrónico: ")
 
-        pasajero = Pasajero(nombre_pasajero, apellido_pasajero, eedad_pasajero, telefono_pasajero, correo_pasajero)
+            pasajero = Pasajero(nombre_pasajero, apellido_pasajero, edad_pasajero, telefono_pasajero, correo_pasajero)
 
         #extraer método
-        numero = input("Ingrese el número de vuelo que desea reservar: ")
-        cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
+            numero = input("Ingrese el número de vuelo que desea reservar: ")
+            cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
 
-        reservar_vuelo(vuelos, numero, pasajero, cantidad)
-    else:
-        print("Opción no válida.")
+            reservar_vuelo(vuelos, numero, pasajero, cantidad)
+        elif opcion == "3":
+            print("Has salido del menu")
+            break
+        else:
+            return("Error")
 
-if __name__ == "__main__":
-    main()
+menu()
